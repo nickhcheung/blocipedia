@@ -29,9 +29,11 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 #Bootstrap
-gem "bootstrap"
+gem "bootstrap-sass"
 #Figaro used to securely store secure configuration info (API Keys) as environmental variables
 gem "figaro"
+#devise isa flexible authentication solution for Rails with Warden
+gem "devise"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -46,6 +48,7 @@ group :development, :test do
   gem 'byebug'
   gem "spring"
   gem "rspec-rails"
+  gem "nyan-cat-formatter"
   gem "shoulda"
   gem "faker"
   gem "factory_girl_rails"
