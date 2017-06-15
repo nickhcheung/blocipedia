@@ -15,3 +15,28 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.field {
+  margin-bottom: 1rem;
+}
+
+.form-head {
+  margin-bottom: 3rem;
+}
+
+.user-info {
+  margin: 1rem 0;
+}
+
+.user-links {
+  padding: 7px;
+  margin: 1rem 0 1rem 2rem;
+}
+
+.gravatar {
+  margin-right: 1rem;
+}
+
+.guest-option {
+  margin: 1rem;
+}
