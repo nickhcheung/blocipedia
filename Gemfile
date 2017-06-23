@@ -34,6 +34,8 @@ gem "bootstrap-sass"
 gem "figaro"
 #devise isa flexible authentication solution for Rails with Warden
 gem "devise"
+#Pundit for Authorization System
+gem "pundit"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
