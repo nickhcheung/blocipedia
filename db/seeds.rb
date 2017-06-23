@@ -13,18 +13,18 @@ User.create!(
   password_confirmation: "helloworld"
 )
 
-#create first wiki
-Wiki.create!(
-  user: User.all.sample,
-  title: "sample title",
-  body: "some body text for first seed test"
-)
+15.times do
+  User.create!(
+    email: Faker::Internet.unique.safe_email,
+    password: Faker::Internet.password(6)
+  )
+end
 
-20.times do
+25.times do
   Wiki.create!(
     user: User.all.sample,
-    title: RandomData.random_sentence,
-    body: RandomData.random_paragraph
+    title: Faker::Hacker.noun,
+    body: Faker::Hacker.say_something_smart
   )
 end
 
