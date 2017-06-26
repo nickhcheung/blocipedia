@@ -36,6 +36,8 @@ gem "figaro"
 gem "devise"
 #Pundit for Authorization System
 gem "pundit"
+#Stripe for taking credit card payments
+gem "stripe"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
