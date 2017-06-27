@@ -3,9 +3,7 @@ class UsersController < ApplicationController
     @user = current_user
 
     @user.standard!
-    @user.wikis.each do |wiki|
-      wiki.update_attributes(private: false)
-    end
+    @user.wikis.update_all(private: false)
 
     if @user.save
       flash[:notice] = "Your Blocipedia membership has been updated to 'standard'. All of your private Wiki's are now public!"
