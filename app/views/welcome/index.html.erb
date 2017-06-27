@@ -6,7 +6,7 @@
     <p>
       <%= link_to "Upgrade Account", new_charge_path, class: "btn btn-primary" %>
     </p>
-  <% elsif current_user && current_user.premium? %>
+  <% elsif current_user && (current_user.premium? || current_user.admin?) %>
       <h1>Blocipedia</h1>
       <p>With Blocipedia you have access to community based Wikis!</p>
       <p>

@@ -8,9 +8,23 @@
 require "random_data"
 
 User.create!(
-  email: "nickhcheung@hotmail.com",
+  email: "standard@bloc.com",
   password: "helloworld",
   password_confirmation: "helloworld"
+)
+
+User.create!(
+  email: "admin@bloc.com",
+  password: "helloworld",
+  password_confirmation: "helloworld",
+  role: "admin"
+)
+
+User.create!(
+  email: "premium@bloc.com",
+  password: "helloworld",
+  password_confirmation: "helloworld",
+  role: "premium"
 )
 
 15.times do

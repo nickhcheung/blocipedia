@@ -15,7 +15,7 @@ class ChargesController < ApplicationController
 
     current_user.premium!
 
-    flash[:notice] = "Thanks for your purchase."
+    flash[:notice] = "Thanks for your purchase. You are now a Blocipedia Premium Member!"
     redirect_to root_path
 
     # This `rescue block` catches and displays those errors.

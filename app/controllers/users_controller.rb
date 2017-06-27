@@ -1,10 +1,14 @@
 class UsersController < ApplicationController
   def downgrade
     @user = current_user
+
     @user.standard!
+    @user.wikis.each do |wiki|
+      wiki.update_attributes(private: false)
+    end
 
     if @user.save
-      flash[:notice] = "Your Blocipedia membership has been updated to 'standard'."
+      flash[:notice] = "Your Blocipedia membership has been updated to 'standard'. All of your private Wiki's are now public!"
       redirect_to root_path
     else
       flash[:error] = "There was an error updating your account. Please try again."
