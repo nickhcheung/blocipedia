@@ -38,6 +38,8 @@ gem "devise"
 gem "pundit"
 #Stripe for taking credit card payments
 gem "stripe"
+#RedCarpet Ruby Library for Markdown processing
+gem "redcarpet"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
