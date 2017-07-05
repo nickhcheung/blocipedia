@@ -1,8 +1,13 @@
 <div>
   <h1><%= markdown(@wiki.title) %></h1>
+  <% if @wiki.private? && (@wiki.user == current_user || current_user.admin?) %>
+    <h5>Collaborators: <%= @collaborators.map(&:email).join(", ") %></h5>
+    <%= link_to "Add Collaborators", new_wiki_collaborator_path(@wiki), class: "btn btn-success" %>
+    <%= link_to "Remove Collaborators", wiki_collaborators_path(@wiki), class: "btn btn-danger" %>
+  <% end %>
 </div>
 
-<div class="row">
+<div class="row wiki-body">
   <div class="col-md-8">
     <p><%= markdown(@wiki.body) %></p>
   </div>

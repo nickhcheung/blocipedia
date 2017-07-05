@@ -2,11 +2,16 @@ class WikisController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @wikis = Wiki.all.visible_to(current_user)
+    if !current_user
+      @wikis = Wiki.all.visible_to(current_user)
+    else
+      @wikis = policy_scope(Wiki)
+    end
   end
 
   def show
     @wiki = Wiki.find(params[:id])
+    @collaborators = @wiki.collaborating_users
   end
 
   def new
@@ -17,6 +22,7 @@ class WikisController < ApplicationController
   def create
     @wiki = Wiki.new(wiki_params)
     @wiki.user = current_user
+    @wiki.collaborating_users = [@wiki.user]
     authorize @wiki
 
     if @wiki.save

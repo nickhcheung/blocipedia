@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+
   devise_for :users
 
   put "downgrade" => "users#downgrade"
 
-  resources :wikis
+  resources :wikis do
+    resources :collaborators, only: [:new, :create, :index, :destroy]
+  end
 
   resources :charges, only: [:new, :create]
 
